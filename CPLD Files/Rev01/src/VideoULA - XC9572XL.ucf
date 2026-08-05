@@ -22,7 +22,6 @@ NET "DISEN"  LOC = "P37"  ;
 NET "G"  LOC = "P16"  ; 
 NET "G_IN"  LOC = "P14"  ; 
 NET "nCS"  LOC = "P40"  ; 
-# CLK_6M: 48MHz build only - comment out for 16MHz build
 NET "CLK_6M"  LOC = "P42"  ; 
 NET "SRAM_ADDR<0>"  LOC = "P8"  ;
 NET "SRAM_ADDR<1>"  LOC = "P7"  ;

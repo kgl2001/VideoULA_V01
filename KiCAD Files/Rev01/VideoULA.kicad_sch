@@ -6,10 +6,11 @@
 	(paper "A4")
 	(title_block
 		(title "Model B - Video ULA Replacement")
-		(date "2026-07-13")
-		(rev "01")
+		(date "2026-08-07")
+		(rev "01a")
 		(company "Ken Lowe")
-		(comment 1 "Rev 01: Initial Release. Final issue swaps / fixes ULA R/R_in & B/B_in pin assignment")
+		(comment 1 "Rev01a: Change C7 and C8 from 10nF to 10uF")
+		(comment 2 "Rev 01: Initial Release. Final issue swaps / fixes ULA R/R_in & B/B_in pin assignment")
 	)
 	(lib_symbols
 		(symbol "Connector_Generic:Conn_01x01"
@@ -8623,7 +8624,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8667086713656442880-C14663.pdf"
+		(property "Datasheet" ""
 			(at 25.4 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -8793,7 +8794,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707861616033792-C5446.pdf"
+		(property "Datasheet" ""
 			(at 39.37 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -9044,7 +9045,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8667086713656442880-C14663.pdf"
+		(property "Datasheet" ""
 			(at 57.15 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -9137,7 +9138,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8556213788455567360-C15849.pdf"
+		(property "Datasheet" ""
 			(at 25.4 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -9285,7 +9286,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10n"
+		(property "Value" "10u"
 			(at 37.8968 116.713 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9307,7 +9308,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757265887555018752-C57112.pdf"
+		(property "Datasheet" ""
 			(at 35.56 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -9329,7 +9330,7 @@
 				)
 			)
 		)
-		(property "JLC Part Number" "C57112"
+		(property "JLC Part Number" "C19702"
 			(at 35.56 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -9553,7 +9554,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706381316128768-C25804.pdf"
+		(property "Datasheet" ""
 			(at 107.95 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -9800,7 +9801,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8590164980525142016-C454614.pdf"
+		(property "Datasheet" ""
 			(at 36.83 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -9899,7 +9900,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588914457561485312-C569042.pdf"
+		(property "Datasheet" ""
 			(at 127 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -10117,7 +10118,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579705779290898432-C29718.pdf"
+		(property "Datasheet" ""
 			(at 251.46 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -10228,7 +10229,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8667086713656442880-C14663.pdf"
+		(property "Datasheet" ""
 			(at 25.4 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -10321,7 +10322,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8667086713656442880-C14663.pdf"
+		(property "Datasheet" ""
 			(at 45.72 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -10414,7 +10415,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8556213788455567360-C15849.pdf"
+		(property "Datasheet" ""
 			(at 52.07 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -10980,7 +10981,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588881829030346752-C47143.pdf"
+		(property "Datasheet" ""
 			(at 214.63 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -11517,7 +11518,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10n"
+		(property "Value" "10u"
 			(at 49.3268 116.713 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11539,7 +11540,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757265887555018752-C57112.pdf"
+		(property "Datasheet" ""
 			(at 46.99 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -11561,7 +11562,7 @@
 				)
 			)
 		)
-		(property "JLC Part Number" "C57112"
+		(property "JLC Part Number" "C19702"
 			(at 46.99 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -11632,7 +11633,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8667086713656442880-C14663.pdf"
+		(property "Datasheet" ""
 			(at 35.56 93.98 0)
 			(hide yes)
 			(show_name no)

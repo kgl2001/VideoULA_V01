@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 /************************************************************************
 VideoULA.v
-VideoULA V1    - A replacement Video ULA for the BBC Micro
+VideoULA V01   - A replacement Video ULA for the BBC Micro
 Build 37       - August 2026 - Pre-load sram_addr_reg one cycle early
                  (reduces address/nWE skew; setup not guaranteed)
                  Based on community code by hoglet (Stardot forums)

@@ -1,5 +1,6 @@
-# VideoULA V01 Rev03 / Rev04 - pin assignments (XC9572XL-VQ44)
+# VideoULA V01 Rev03 - pin assignments (XC9572XL-VQ44)
 # Derived from the KiCad schematic for hardware Rev03.
+# The Rev03 pinout is identical to Rev04.
 # CLK_6M: drives the SAA5050 in the 48MHz build only (high-Z in the 16MHz build).
 NET "A"  LOC = "P2"  ;
 NET "B"  LOC = "P12"  ;

@@ -123,7 +123,7 @@ The external SRAM stores the 16-entry colour palette (4 bits per entry):
 
 The SAA5050 teletext chip requires a 6MHz clock with a specific phase relationship to the 1MHz system clock (tD = 6-60ns from 6MHz rising edge to 1MHz falling edge).
 
-- **48MHz mode**: The CPLD generates a clean, phase-locked 6MHz output on the CLK_6M pin (tD ≈ 20ns ✓). This can be connected to the SAA5050 via an IC37 replacement board.
+- **48MHz mode**: The CPLD generates a clean, phase-locked 6MHz output on the CLK_6M pin (tD ≈ 20ns ✓). This can be connected to the SAA5050 using a small replacement board for IC37 (Model B) or IC25 (Master) - see the [6MHz Interface Boards](https://github.com/kgl2001/VideoULA_V01/tree/main/KiCAD%20Files/6MHz%20Interface%20Boards).
 - **16MHz mode**: The BBC motherboard's existing 6MHz generation circuit is used. The CPLD CLK_6M output is held high-Z.
 
 ---

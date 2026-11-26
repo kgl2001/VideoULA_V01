@@ -60,7 +60,7 @@ J1 is a 2-pin right-angle header fitted on the underside of the PCB. The labels 
 2. Solder the round pin headers to the board, then plug the board into the socket, pin 1 matching.
 3. Check the solder bridges (default is the VideoULA 6MHz).
 4. Connect J1 to the CPLD ULA's CLK_6M.
-5. Build the CPLD in the 48MHz mode (see the V02 / V03 firmware READMEs).
+5. Build the CPLD in either the 48MHz or the 16MHz mode (see the firmware READMEs).
 
 ### Without removing the chip
 
@@ -68,9 +68,9 @@ If you would rather not remove IC37 / IC25, you can cut the output leg of the ga
 
 ## Status
 
-Rev 01 has been built and tested in both the IC37 (Model B) and IC25 (Master) versions, on a Model B and a Master 128, in both the 16MHz and 48MHz CPLD builds.
+Rev 01 has been built and tested in both the IC37 (Model B) and IC25 (Master) versions, on a Model B and a Master 128.
 
-The 48MHz build works well. The 16MHz build did not work as well with the CPLD's 6MHz: the 6MHz is generated from the 48MHz oscillator, and a good phase lock could not be achieved between that and the 16MHz clock used to generate the 8/4/2/1MHz clocks. Use the 48MHz build with these boards.
+The 48MHz build gives the cleanest 6MHz. The 16MHz build now also works with the CPLD's 6MHz: it is generated from the 16MHz clock and phase-locked to the 1MHz clock. It has a small fixed jitter (about 10ns), so M7CALIB can show slightly more noise than in the 48MHz build. (An earlier 16MHz build generated the 6MHz from the 48MHz oscillator and could not be phase-locked to the 16MHz clock.)
 
 ## Files
 

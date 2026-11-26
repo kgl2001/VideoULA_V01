@@ -37,7 +37,7 @@ All three versions share the same 28-pin DIP footprint as the original ULA and a
 | Rev03 | PCB designed, not yet built | Added 74LV6T17 to buffer all clock outputs (8/4/2/1MHz, CRTC) for Master 128 compatibility |
 | Rev04 | PCB designed, not yet built | Repositioned JTAG header |
 
-Note: Only Rev01 has been built and tested. Rev02 onwards incorporate improvements identified during Rev01 testing.
+Note: Only Rev01 has been built and tested. Rev02 onwards incorporate improvements identified during Rev01 testing. The latest revision supersedes the earlier ones, which are kept for the historical record.
 
 ### CLK_IN Reliability Daughterboard
 
@@ -79,7 +79,14 @@ Two firmware builds are required — one per operating mode. To switch modes, re
 - No onboard oscillator required
 - May show brief display noise on cold startup on machines with noisy 16MHz clock circuits
 - The CLK_IN daughterboard resolves this on Rev01; Rev02+ has the fix built in
+- The CPLD generates a phase-locked 6MHz from the 16MHz clock (small fixed jitter, about 10ns); the motherboard's own 6MHz can be used instead
 - Build: uncomment `` `define CLK_16MHZ `` in `VideoULA.v`
+
+#### CLK_AUTO (experimental)
+- A third option, for the unified Rev02 to Rev04 boards, where the mode is read at power-up from the `SRAM_nWE` pin (JP2). One build covers both clocks
+- Only tested on Rev01 hardware. It fits with no headroom (70 to 72 of 72 macrocells), and because the strap is read at power-up it may occasionally pick the wrong mode; power-cycle to recover
+- The fixed 48MHz and 16MHz builds are smaller and have had more testing
+- Build: uncomment `` `define CLK_AUTO `` (and comment out `CLK_48MHZ`) in `VideoULA.v`
 
 ### ISE Fitter Settings (critical)
 
@@ -124,7 +131,11 @@ The external SRAM stores the 16-entry colour palette (4 bits per entry):
 The SAA5050 teletext chip requires a 6MHz clock with a specific phase relationship to the 1MHz system clock (tD = 6-60ns from 6MHz rising edge to 1MHz falling edge).
 
 - **48MHz mode**: The CPLD generates a clean, phase-locked 6MHz output on the CLK_6M pin (tD ≈ 20ns ✓). This can be connected to the SAA5050 using a small replacement board for IC37 (Model B) or IC25 (Master) - see the [6MHz Interface Boards](https://github.com/kgl2001/VideoULA_V01/tree/main/KiCAD%20Files/6MHz%20Interface%20Boards).
-- **16MHz mode**: The BBC motherboard's existing 6MHz generation circuit is used. The CPLD CLK_6M output is held high-Z.
+- **16MHz mode**: The CPLD also generates a 6MHz output on CLK_6M, derived from the 16MHz clock and phase-locked to the 1MHz (tD ≈ 31ns ✓). It has a small fixed jitter (about 10ns), so M7CALIB can show slightly more noise. If CLK_6M is not connected, the BBC motherboard's existing 6MHz circuit is used as normal.
+
+The CPLD's CLK_6M output is brought out on a single-pin header on the V01 board, marked **6MHz Clk** on the silkscreen (J2 in the schematic). To use the CPLD's 6MHz in either the 48MHz or the 16MHz build, connect it to the pin marked **6MHz** on the IC37 / IC25 interface board (J1 pin 1 in the schematic; the other pin, marked HSyn, is not used), or to the teletext IC's 6MHz input with a clip lead as described above. If it is left unconnected, the motherboard's own 6MHz is used as normal.
+
+With the motherboard's own 6MHz circuit, the mode 7 cursor on a Master 128 is half a pixel (one column) to the left. The full Master 128 results are in the [CPLD README](CPLD%20Files/README.md#master-128-results-v01-rev01).
 
 ---
 
@@ -152,21 +163,22 @@ Note that the JLCPCB Economy PCBA process only assembles components on one side 
 ## Known Limitations
 
 - **Cold startup noise (16MHz mode, standard clock machines)**: Machines with noisy 16MHz clock circuits may show brief display noise on cold power-up. Use the CLK_IN daughterboard (Rev01) or upgrade to Rev02+ which has the fix built in. The 48MHz operating mode is not affected.
-- **Master 128 compatibility**: V01 has not been tested on the Master 128. Clock output buffering (added in Rev03) may be required for full Master 128 compatibility.
+- **Master 128 compatibility**: Rev01 has been tested on a Master 128 in both builds (see the [CPLD README](CPLD%20Files/README.md#master-128-results-v01-rev01)). Clock output buffering (added in Rev03) may still be required for full Master 128 compatibility on some machines.
 - **SCART/HDMI adapter compatibility**: Some SCART→HDMI display adapters may show minor pixel artefacts with non-standard screen modes. RGBtoHDMI and direct CRT connections are not affected.
 
 ---
 
 ## Compatibility
 
-Tested on BBC Micro Model B with original clock circuit and with clock fixer modification. Not tested on BBC Master 128.
+Tested on BBC Micro Model B with original clock circuit and with clock fixer modification, and on a BBC Master 128 (Rev01).
 
 ---
 
 ## Credits
 
 - **Ken Lowe** — PCB design, Verilog development and testing
-- **hoglet (Stardot forums)** — Clock architecture analysis, DRAM timing analysis, community testing
+- **hoglet (Stardot forums)** — Clock architecture analysis, DRAM timing analysis, SRAM write address setup analysis and proposed fix, community testing
+- **radiofan (Stardot forums)** — SRAM write fix, 16MHz-derived 6MHz clock approach
 - **Stardot community** — Testing, feedback and suggestions
 
 ---

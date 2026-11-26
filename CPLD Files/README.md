@@ -107,6 +107,22 @@ Back-port of the V02/V03 improvements:
 The SRAM write fix was identified by hoglet and radiofan, and the 16MHz-derived
 6MHz approach is based on radiofan's.
 
+### Model B results (V01 Rev01)
+
+Cursor and mode 7 test screen (M7CALIB), with the build and 6MHz source shown.
+
+| Build | 6MHz source | Cursor | M7CALIB |
+|---|---|---|---|
+| 48MHz | CPLD | Correct, modes 0 to 7 | Pixel perfect |
+| 48MHz | Motherboard | Mode 7 correct | A bit noisy |
+| 16MHz | CPLD | Mode 7 correct | A little noisy |
+| 16MHz | Motherboard | Correct, modes 0 to 7 | A bit noisy |
+
+RGBtoHDMI calibration survived a power cycle in every case. Exile, Lancelot,
+Planetoid and Zork loaded and ran with no sparkles or other corruption. `CLK_AUTO`
+was also tested on the Model B in both modes with the CPLD 6MHz (cursors correct,
+games working, calibration surviving power cycles).
+
 ### Master 128 results (V01 Rev01)
 
 Mode 7 cursor, with the build and 6MHz source shown. Modes 0 to 6 were correct in

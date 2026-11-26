@@ -114,8 +114,8 @@ Cursor and mode 7 test screen (M7CALIB), with the build and 6MHz source shown.
 | Build | 6MHz source | Cursor | M7CALIB |
 |---|---|---|---|
 | 48MHz | CPLD | Correct, modes 0 to 7 | Pixel perfect |
-| 48MHz | Motherboard | Mode 7 correct | A bit noisy |
-| 16MHz | CPLD | Mode 7 correct | A little noisy |
+| 48MHz | Motherboard | Correct, modes 0 to 7 | A bit noisy |
+| 16MHz | CPLD | Correct, modes 0 to 7 | A little noisy |
 | 16MHz | Motherboard | Correct, modes 0 to 7 | A bit noisy |
 
 RGBtoHDMI calibration survived a power cycle in every case. Exile, Lancelot,
